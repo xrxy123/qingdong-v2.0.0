@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.qingdong.fit'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId 'com.qingdong.fit'
+        minSdk 21
+        targetSdk 34
+        versionCode 2
+        versionName '2.0.0'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            // 默认使用 debug 签名即可直接安装到手机（侧载）。
+            // 如需正式发布到应用商店，请改为你自己的 release 签名（见 README）。
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    // 本应用为零依赖的纯前端 WebView 壳，无需额外库
+}
